@@ -1,0 +1,28 @@
+# Keep the image small: only src/include/model(int8)/api are needed.
+# NOTE: inline comments are NOT allowed in .dockerignore — keep patterns on their own lines.
+.git/
+build/
+
+# Windows ONNX Runtime; the Linux build fetches its own
+third_party/
+
+data/
+__pycache__/
+**/__pycache__/
+training/_hf_out/
+
+# PyTorch checkpoint (large; ONNX is what ships)
+model/transformer/
+
+# 256MB fp32; only the INT8 build ships
+model/headline.onnx
+
+# legacy BoW model
+model/model.bin
+
+fake_news
+fake_news.exe
+*.dll
+*.pdb
+*.log
+.condaenv/
