@@ -1,0 +1,22 @@
+{
+  "model_type": "distilbert",
+  "onnx_model": "headline.int8.onnx",
+  "vocab_file": "vocab.txt",
+  "max_len": 64,
+  "do_lower_case": true,
+  "strip_accents": true,
+  "unk_token": "[UNK]",
+  "cls_token": "[CLS]",
+  "sep_token": "[SEP]",
+  "pad_token": "[PAD]",
+  "unk_id": 100,
+  "cls_id": 101,
+  "sep_id": 102,
+  "pad_id": 0,
+  "wordpiece_prefix": "##",
+  "id2label": {
+    "0": "REAL",
+    "1": "FAKE"
+  },
+  "fake_label_index": 1
+}

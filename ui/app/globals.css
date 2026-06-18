@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-archivo);
+}
+
+html,
+body {
+  height: 100%;
+  background: #000;
+  color: #fff;
+}
+
+body {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  overscroll-behavior: none;
+}
+
+/* Hide scrollbars on the snap feed while keeping it scrollable. */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

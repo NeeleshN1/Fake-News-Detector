@@ -1,0 +1,30 @@
+# Python env / training artifacts
+.condaenv/
+__pycache__/
+training/_hf_out/
+data/
+
+# Build output
+build/
+fake_news
+fake_news.exe
+*.dll
+*.pdb
+
+# Vendored ONNX Runtime (re-download via release / Dockerfile)
+third_party/
+
+# Fine-tuned PyTorch checkpoint (large; ONNX is what ships)
+model/transformer/
+
+# Full-precision ONNX (256MB, >GitHub limit); only the INT8 build ships
+model/headline.onnx
+
+# Keep the deployable artifacts:
+#   model/headline.int8.onnx, model/vocab.txt, model/config.json
+!model/headline.int8.onnx
+!model/vocab.txt
+!model/config.json
+
+# Legacy BoW model (replaced by the transformer)
+model/model.bin

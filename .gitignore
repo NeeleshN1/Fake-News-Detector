@@ -1,0 +1,11 @@
+# Python environment (multi-GB) — recreate via backend/setup_env.sh
+.condaenv/
+
+# Setup / build scratch
+*.log
+ort.zip
+setup_env.sh
+
+# OS
+.DS_Store
+Thumbs.db
