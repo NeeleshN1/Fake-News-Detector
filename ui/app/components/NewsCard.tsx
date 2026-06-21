@@ -23,16 +23,26 @@ export default function NewsCard({ article, active }: { article: Article; active
 
   return (
     <section className="relative h-[100dvh] w-full snap-start overflow-hidden bg-neutral-950">
-      {/* Background image / fallback */}
+      {/* Background image / fallback. Blurred fill keeps the screen full while the
+          real image is shown whole (object-contain) so nothing important is cropped. */}
       {article.image && imgOk ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={article.image}
-          alt=""
-          loading="lazy"
-          onError={() => setImgOk(false)}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={article.image}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full scale-110 object-cover blur-2xl opacity-50"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={article.image}
+            alt=""
+            loading="lazy"
+            onError={() => setImgOk(false)}
+            className="absolute inset-0 h-full w-full object-contain"
+          />
+        </>
       ) : (
         <div className="absolute inset-0 bg-gradient-to-br from-neutral-800 via-neutral-900 to-black" />
       )}
