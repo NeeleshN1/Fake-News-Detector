@@ -52,7 +52,7 @@ export default function AnalyzeSheet() {
             <div className="mx-auto mb-4 h-1 w-10 rounded-full bg-white/25" />
             <h3 className="font-display text-xl uppercase tracking-tight text-white">Analyze a headline</h3>
             <p className="mb-3 text-xs text-white/50">
-              Scored by the C++ DistilBERT model — a style signal, not a fact-check.
+              Scored by the C++ DistilBERT model.
             </p>
 
             <textarea
