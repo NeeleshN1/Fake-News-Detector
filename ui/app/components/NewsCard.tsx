@@ -5,10 +5,6 @@ import type { Article } from "@/lib/types";
 import { timeAgo } from "@/lib/news";
 import RatingBadge from "./RatingBadge";
 
-function initials(source: string) {
-  return source.replace(/[^A-Za-z0-9 ]/g, "").trim().slice(0, 1).toUpperCase() || "N";
-}
-
 export default function NewsCard({ article, active }: { article: Article; active: boolean }) {
   const [imgOk, setImgOk] = useState(true);
   const [saved, setSaved] = useState(false);
@@ -68,9 +64,6 @@ export default function NewsCard({ article, active }: { article: Article; active
 
       {/* Right action rail */}
       <div className="absolute bottom-28 right-3 z-20 flex flex-col items-center gap-5 text-white">
-        <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/15 font-display text-lg ring-2 ring-white/30 backdrop-blur">
-          {initials(article.source)}
-        </div>
         <button onClick={() => setSaved((v) => !v)} className="flex flex-col items-center gap-1">
           <svg viewBox="0 0 24 24" className="h-8 w-8" fill={saved ? "#f43f5e" : "none"} stroke="currentColor">
             <path
@@ -79,7 +72,7 @@ export default function NewsCard({ article, active }: { article: Article; active
               strokeLinejoin="round"
             />
           </svg>
-          <span className="text-[10px] font-semibold">Save</span>
+          <span className="text-[10px] font-semibold">Like</span>
         </button>
         <button onClick={share} className="flex flex-col items-center gap-1">
           <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none" stroke="currentColor">
