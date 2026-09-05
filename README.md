@@ -29,7 +29,7 @@ Browser (feed)
   GonzaloA) plus diverse real headlines (AG News, HuffPost) so modern multi-domain news isn't
   over-flagged. Exported to ONNX and **INT8-quantized** (~67 MB) for fast, small-footprint inference.
 - **Inference:** a hand-written C++ WordPiece tokenizer (matching `distilbert-base-uncased`) feeds
-  ONNX Runtime's C++ API. ~92% test accuracy.
+  ONNX Runtime's C++ API. ~94% test accuracy.
 - **API:** FastAPI exposes `POST /predict` (one headline) and `POST /predict_batch` (a page of
   headlines, one model load).
 
