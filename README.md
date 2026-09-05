@@ -1,4 +1,4 @@
-# NLP Fake News Detector
+# Verify: Real-Time News Classification Engine
 
 A live-news web app that rates news headlines **real or fake** in real time, powered by a
 fine-tuned **DistilBERT** transformer running in **C++ via ONNX Runtime**.
@@ -6,9 +6,6 @@ fine-tuned **DistilBERT** transformer running in **C++ via ONNX Runtime**.
 The front end is a **TikTok-style vertical feed** of live news (NewsAPI.org); every headline is
 scored by the model and shown with a real/fake badge. You can also paste your own headline to
 analyze it.
-
-> The model detects the **linguistic/stylistic signal** of fake/clickbait headlines (a signal, not a
-> fact-check of any specific claim).
 
 ## Repository layout
 
